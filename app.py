@@ -25,7 +25,8 @@ class Item(db.Model):
 
 @app.route('/')
 def index():
-    return render_template('shop/index.html')
+    items = Item.query.all()
+    return render_template('shop/index.html', items=items)
 
 
 if __name__ == '__main__':

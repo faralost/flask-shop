@@ -3,5 +3,22 @@
 {% block title %}Главная{% endblock %}
 
 {% block content %}
-    <h2>фаралост</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Price</th>
+            <th scope="col">Options</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+            <tr>
+                <td><a class="mylink" href="#">{{ item.name }}</a></td>
+                <td>{{ item.price }}</td>
+                <td><a href="#" class="mylink"><i class="bi bi-cart4"></i></a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
