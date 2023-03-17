@@ -33,3 +33,21 @@ def item_create():
         flash(f'Successfully created new item: {item}', 'success')
         return redirect(url_for('items.index'))
     return render_template('items/create.html', form=form)
+
+
+@items_bp.route('/items/update/<int:pk>', methods=['GET', 'POST'])
+@login_required
+@admin_role_required
+def item_update(pk):
+    item = Item.query.get_or_404(pk)
+    form = ItemForm()
+    if form.validate_on_submit():
+        item.name = form.name.data
+        item.price = form.price.data
+        db.session.add(item)
+        db.session.commit()
+        flash(f'Successfully updated item: {item}', 'success')
+        return redirect(url_for('items.item_detail', pk=item.id))
+    form.name.data = item.name
+    form.price.data = item.price
+    return render_template('items/update.html', form=form, item=item)

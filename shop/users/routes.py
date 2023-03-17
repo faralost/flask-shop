@@ -29,4 +29,4 @@ def login():
 def logout():
     logout_user()
     flash('You were logged out', 'success')
-    return redirect(url_for('items.index'))
+    return redirect(url_for('users.login'))
