@@ -35,7 +35,7 @@ def item_create():
     return render_template('items/create.html', form=form)
 
 
-@items_bp.route('/items/update/<int:pk>', methods=['GET', 'POST'])
+@items_bp.route('/items/<int:pk>/update', methods=['GET', 'POST'])
 @login_required
 @admin_role_required
 def item_update(pk):
@@ -51,3 +51,14 @@ def item_update(pk):
     form.name.data = item.name
     form.price.data = item.price
     return render_template('items/update.html', form=form, item=item)
+
+
+@items_bp.route('/items/<int:pk>/delete')
+@login_required
+@admin_role_required
+def item_delete(pk):
+    item = Item.query.get_or_404(pk)
+    db.session.delete(item)
+    db.session.commit()
+    flash(f'Item {item} was deleted', 'danger')
+    return redirect(url_for('items.index'))

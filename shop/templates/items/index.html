@@ -17,9 +17,10 @@
                 <td><a class="mylink" href="{{ url_for('items.item_detail', pk=item.id) }}">{{ item.name }}</a></td>
                 <td>{{ item.price }} $</td>
                 <td>
-                    <a href="#" class="mylink"><i class="bi bi-cart4"></i></a>
+                    <a href="#" class="mylink link-success"><i class="bi bi-cart4"></i></a>
                     {% if current_user.is_authenticated and current_user.is_admin %}
-                    <a href="{{ url_for('items.item_update', pk=item.id) }}" class="mylink"><i class="bi bi-pencil-square"></i></a>
+                    <a href="{{ url_for('items.item_update', pk=item.id) }}" class="mylink link-warning"><i class="bi bi-pencil-square"></i></a>
+                    <a href="{{ url_for('items.item_delete', pk=item.id) }}" class="mylink link-danger"><i class="bi bi-trash"></i></a>
                     {% endif %}
                 </td>
             </tr>
