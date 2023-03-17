@@ -1,8 +1,10 @@
 from flask import Blueprint, render_template, flash, redirect, url_for
+from flask_login import login_required
 
 from shop import db
 from shop.items.forms import ItemForm
 from shop.items.models import Item
+from shop.users.models import admin_role_required
 
 items_bp = Blueprint('items', __name__)
 
@@ -20,6 +22,8 @@ def item_detail(pk):
 
 
 @items_bp.route('/items/create', methods=['GET', 'POST'])
+@login_required
+@admin_role_required
 def item_create():
     form = ItemForm()
     if form.validate_on_submit():

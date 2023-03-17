@@ -1,8 +1,10 @@
 from datetime import datetime
+from functools import wraps
 
-from flask_login import UserMixin
+from flask import abort
+from flask_login import UserMixin, current_user
 
-from shop import login_manager, db, bcrypt, app
+from shop import db, bcrypt, app
 
 
 class User(UserMixin, db.Model):
@@ -41,3 +43,13 @@ def terminal():
     db.session.commit()
     print(f'Created 2 users: {admin} as Admin User  and {user} as Simple User. '
           f'Passwords are "admin" and "users" respectively')
+
+
+def admin_role_required(func):
+    @wraps(func)
+    def decorated_view(*args, **kwargs):
+        if not current_user.is_admin:
+            abort(403)
+        return func(*args, **kwargs)
+
+    return decorated_view
