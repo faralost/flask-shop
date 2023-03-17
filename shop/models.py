@@ -1,4 +1,4 @@
-from shop import db, bcrypt
+from shop import db, bcrypt, app
 
 from datetime import datetime
 
@@ -22,6 +22,20 @@ class User(db.Model):
 
     def __repr__(self):
         return f'{self.email}'
+
+
+@app.cli.command("terminal")
+def terminal():
+    """
+    creates two default users for testing purposes
+    """
+    admin = User(email='admin@admin.com', password='admin', is_admin=True)
+    user = User(email='user@user.com', password='user')
+    db.session.add(admin)
+    db.session.add(user)
+    db.session.commit()
+    print(f'Created 2 users: {admin} as Admin User  and {user} as Simple User. '
+          f'Passwords are "admin" and "user" respectively')
 
 
 class Item(db.Model):
