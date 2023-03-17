@@ -1,13 +1,8 @@
-from flask_login import UserMixin
-
-from shop import db, bcrypt, app, login_manager
-
 from datetime import datetime
 
+from flask_login import UserMixin
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.filter_by(id=int(user_id)).first()
+from shop import login_manager, db, bcrypt, app
 
 
 class User(UserMixin, db.Model):
@@ -40,24 +35,9 @@ def terminal():
     creates two default users for testing purposes
     """
     admin = User(email='admin@admin.com', password='admin', is_admin=True)
-    user = User(email='user@user.com', password='user')
+    user = User(email='users@users.com', password='users')
     db.session.add(admin)
     db.session.add(user)
     db.session.commit()
     print(f'Created 2 users: {admin} as Admin User  and {user} as Simple User. '
-          f'Passwords are "admin" and "user" respectively')
-
-
-class Item(db.Model):
-    __tablename__ = 'items'
-
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    price = db.Column(db.Numeric(precision=10, scale=2), nullable=False)
-
-    def __init__(self, name, price):
-        self.name = name
-        self.price = price
-
-    def __repr__(self):
-        return f'{self.name}'
+          f'Passwords are "admin" and "users" respectively')

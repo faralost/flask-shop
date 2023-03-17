@@ -14,7 +14,7 @@
         <tbody>
         {% for item in items %}
             <tr>
-                <td><a class="mylink" href="{{ url_for('item_detail', pk=item.id) }}">{{ item.name }}</a></td>
+                <td><a class="mylink" href="{{ url_for('items.item_detail', pk=item.id) }}">{{ item.name }}</a></td>
                 <td>{{ item.price }} $</td>
                 <td><a href="#" class="mylink"><i class="bi bi-cart4"></i></a></td>
             </tr>
