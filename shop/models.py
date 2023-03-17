@@ -1,9 +1,16 @@
-from shop import db, bcrypt, app
+from flask_login import UserMixin
+
+from shop import db, bcrypt, app, login_manager
 
 from datetime import datetime
 
 
-class User(db.Model):
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.filter_by(id=int(user_id)).first()
+
+
+class User(UserMixin, db.Model):
     __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
@@ -15,13 +22,16 @@ class User(db.Model):
 
     def __init__(self, email, password, is_admin=False, phone=None):
         self.email = email
-        self.password = bcrypt.generate_password_hash(password)
+        self.password = bcrypt.generate_password_hash(password).decode('utf-8')
         self.phone = phone
         self.created_on = datetime.now()
         self.is_admin = is_admin
 
     def __repr__(self):
         return f'{self.email}'
+
+    def check_password(self, password):
+        return bcrypt.check_password_hash(self.password, password)
 
 
 @app.cli.command("terminal")
