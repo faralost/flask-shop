@@ -23,6 +23,7 @@
                     <li><a class="nav-link px-2 text-white" href="{{ url_for('items.item_create') }}">Create Item</a>
                     </li>
                 {% endif %}
+                <li><a class="nav-link px-2 text-white" href="{{ url_for('items.cart') }}">Cart[{{ session['cart']|length }}]</a></li>
                 {% if current_user.is_authenticated %}
                     <li><a class="nav-link px-2 text-white" href="{{ url_for('users.logout') }}">Logout</a></li>
                 {% else %}
