@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, flash, redirect, url_for, session, request
-from flask_login import login_required
+from flask_login import login_required, current_user
 
 from shop import db
 from shop.items.forms import ItemForm
@@ -19,7 +19,10 @@ def index():
 @items_bp.route('/items/<int:pk>')
 def item_detail(pk):
     item = Item.query.get_or_404(pk)
-    return render_template('items/item.html', item=item)
+    item_is_liked = False
+    if item.favorited_users.filter_by(id=current_user.id).first():
+        item_is_liked = True
+    return render_template('items/item.html', item=item, item_is_liked=item_is_liked)
 
 
 @items_bp.route('/items/create', methods=['GET', 'POST'])
@@ -115,3 +118,19 @@ def delete_cart_item(pk):
         if int(item_id) == pk:
             session['cart'].pop(item_id, None)
     return redirect(url_for('items.cart'))
+
+
+@items_bp.route('/items/<int:pk>/favorite', methods=['POST'])
+@login_required
+def favorite(pk):
+    item = Item.query.get_or_404(pk)
+    if item.favorited_users.filter_by(id=current_user.id).first():
+        item.favorited_users.remove(current_user)
+        db.session.commit()
+        button_text = 'Favorite'
+    else:
+        item.favorited_users.append(current_user)
+        db.session.commit()
+        button_text = 'Unfavorite'
+    return {'value': button_text}
+

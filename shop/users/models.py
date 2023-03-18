@@ -30,6 +30,9 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return bcrypt.check_password_hash(self.password, password)
 
+    def is_favorited(self, item):
+        return self.favorited_items.filter_by(id=item.id).count() > 0
+
 
 @app.cli.command("terminal")
 def terminal():

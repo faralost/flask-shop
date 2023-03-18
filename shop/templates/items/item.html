@@ -9,6 +9,7 @@
             <th scope="col">Item</th>
             <th scope="col">Price</th>
             <th scope="col">Options</th>
+            <th scope="col">Favorite</th>
         </tr>
         </thead>
         <tbody>
@@ -22,11 +23,26 @@
                     <a href="{{ url_for('items.item_delete', pk=item.id) }}" class="mylink link-danger"><i
                             class="bi bi-trash"></i></a>
                 {% endif %}
+
                 <form action="{{ url_for('items.add_to_cart', pk=item.id) }}" method="POST">
                     <input type="hidden" name="next" value="{{ request.path }}">
                     <button type="submit" class="btn btn-sm btn-warning">Add to Cart</button>
                 </form>
+
             </td>
+            <td>{% if current_user.is_authenticated %}
+                {% if item_is_liked %}
+                    <button class="item-favorite btn btn-info btn-sm"
+                            data-item-favorite-url="{{ url_for('items.favorite', pk=item.id) }}">
+                        Unfavorite
+                    </button>
+                {% else %}
+                    <button class="item-favorite btn btn-info btn-sm"
+                            data-item-favorite-url="{{ url_for('items.favorite', pk=item.id) }}">
+                        Favorite
+                    </button>
+                {% endif %}
+            {% endif %}</td>
         </tr>
         </tbody>
     </table>
