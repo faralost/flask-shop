@@ -18,6 +18,7 @@
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a class="nav-link px-2 text-white" href="{{ url_for('items.index') }}">Home</a></li>
+
                 {% block nav_link %}{% endblock %}
                 {% if current_user.is_authenticated and current_user.is_admin %}
                     <li><a class="nav-link px-2 text-white" href="{{ url_for('items.item_create') }}">Create Item</a>
@@ -25,6 +26,7 @@
                 {% endif %}
                 <li><a class="nav-link px-2 text-white" href="{{ url_for('items.cart') }}">Cart[{{ session['cart']|length }}]</a></li>
                 {% if current_user.is_authenticated %}
+                    <li><a class="nav-link px-2 text-white" href="{{ url_for('items.favorited_items') }}">Favorites</a></li>
                     <li><a class="nav-link px-2 text-white" href="{{ url_for('users.logout') }}">Logout</a></li>
                 {% else %}
                     <li><a class="nav-link px-2 text-white" href="{{ url_for('users.login') }}">Login</a></li>

@@ -5,7 +5,7 @@ from shop import db
 from shop.items.forms import ItemForm
 from shop.items.models import Item
 from shop.items.utils import get_cart_total_price
-from shop.users.models import admin_role_required
+from shop.users.models import admin_role_required, User
 
 items_bp = Blueprint('items', __name__)
 
@@ -134,3 +134,9 @@ def favorite(pk):
         button_text = 'Unfavorite'
     return {'value': button_text}
 
+
+@items_bp.route('/favorited-items')
+@login_required
+def favorited_items():
+    items = User.query.filter_by(id=current_user.id).first().favorited_items.all()
+    return render_template('items/favorited_items.html', items=items)
