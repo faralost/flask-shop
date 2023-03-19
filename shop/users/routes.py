@@ -3,7 +3,7 @@ from flask_login import current_user, login_user, login_required, logout_user
 
 from shop import db
 from shop.users.forms import LoginForm, ContactForm
-from shop.users.models import User, Contact
+from shop.users.models import User, Contact, admin_role_required
 
 users_bp = Blueprint('users', __name__)
 
@@ -48,3 +48,11 @@ def contact():
         form.email.data = current_user.email
         form.phone.data = current_user.phone
     return render_template('users/contact.html', form=form)
+
+
+@users_bp.route('/contact-forms')
+@login_required
+@admin_role_required
+def contact_forms():
+    contacts = Contact.query.order_by(Contact.id.desc()).all()
+    return render_template('users/contact-forms.html', contacts=contacts)
