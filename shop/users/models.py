@@ -7,6 +7,18 @@ from flask_login import UserMixin, current_user
 from shop import db, bcrypt, app
 
 
+class Contact(db.Model):
+    __tablename__ = 'contacts'
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(50), nullable=False)
+    phone = db.Column(db.String(50), nullable=False)
+    name = db.Column(db.String(50), nullable=False)
+    description = db.Column(db.String(1000), nullable=False)
+
+    def __repr__(self):
+        return f'Contact <{self.name}>'
+
+
 class User(UserMixin, db.Model):
     __tablename__ = "users"
 
