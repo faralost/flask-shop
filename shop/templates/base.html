@@ -43,6 +43,9 @@
                 {% endif %}
             </ul>
             <ul>
+                {% if current_user.is_authenticated %}
+                {{ current_user }} </a> &nbsp;&nbsp;
+                {% endif %}
                 <a href="{{ url_for('users.set_language', lang='en') }}">{{ _('en') }}</a>
                 <a href="{{ url_for('users.set_language', lang='ru') }}">{{ _('ru') }}</a>
             </ul>

@@ -9,7 +9,9 @@
             <th scope="col">{{ _('Item') }}</th>
             <th scope="col">{{ _('Price') }}</th>
             <th scope="col">{{ _('Options') }}</th>
+            {% if current_user.is_authenticated %}
             <th scope="col">{{ _('Favorite') }}</th>
+            {% endif %}
         </tr>
         </thead>
         <tbody>
@@ -30,6 +32,7 @@
                 </form>
 
             </td>
+            {% if current_user.is_authenticated %}
             <td>{% if current_user.is_authenticated %}
                 {% if item_is_liked %}
                     <button class="item-favorite btn btn-info btn-sm"
@@ -42,7 +45,9 @@
                         {{ _('Favorite') }}
                     </button>
                 {% endif %}
-            {% endif %}</td>
+            {% endif %}
+            </td>
+        {% endif %}
         </tr>
         </tbody>
     </table>

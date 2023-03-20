@@ -21,7 +21,7 @@ def index():
 def item_detail(pk):
     item = Item.query.get_or_404(pk)
     item_is_liked = False
-    if item.favorited_users.filter_by(id=current_user.id).first():
+    if not current_user.is_anonymous and item.favorited_users.filter_by(id=current_user.id).first():
         item_is_liked = True
     return render_template('items/item.html', item=item, item_is_liked=item_is_liked)
 
