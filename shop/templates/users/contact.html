@@ -17,7 +17,7 @@
             {% endif %}
 
             {{ form.phone.label }}
-            {{ form.phone(class="form-control") }}
+            {{ form.phone(class="form-control", minlength='16') }}
             {% if form.phone.errors %}
                 {% for error in form.phone.errors %}
                     <div class="alert alert-danger" role="alert">
@@ -50,3 +50,4 @@
         </form>
     </div>
 {% endblock %}
+

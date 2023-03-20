@@ -11,8 +11,8 @@ async function onFavoriteClick(event) {
 }
 
 function onLoad() {
-    const commentButtons = document.querySelectorAll('.item-favorite')
-    commentButtons.forEach(function (curBtn) {
+    const favoriteButtons = document.querySelectorAll('.item-favorite')
+    favoriteButtons.forEach(function (curBtn) {
         curBtn.addEventListener('click', onFavoriteClick)
     })
 }
