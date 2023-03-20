@@ -52,12 +52,12 @@ def terminal():
     creates two default users for testing purposes
     """
     admin = User(email='admin@admin.com', password='admin', is_admin=True)
-    user = User(email='users@users.com', password='users')
+    user = User(email='user@user.com', password='user')
     db.session.add(admin)
     db.session.add(user)
     db.session.commit()
     print(f'Created 2 users: {admin} as Admin User  and {user} as Simple User. '
-          f'Passwords are "admin" and "users" respectively')
+          f'Passwords are "admin" and "user" respectively')
 
 
 def admin_role_required(func):
