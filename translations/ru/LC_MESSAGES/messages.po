@@ -1,0 +1,217 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-03-20 20:33+0600\n"
+"PO-Revision-Date: 2023-03-20 17:32+0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: shop/items/forms.py:8 shop/users/forms.py:17
+msgid "Name"
+msgstr "Название"
+
+#: shop/items/forms.py:9 shop/templates/items/cart.html:12
+#: shop/templates/items/item.html:10 shop/templates/partial/items_list.html:6
+msgid "Price"
+msgstr "Цена"
+
+#: shop/items/forms.py:10 shop/users/forms.py:19
+msgid "Submit"
+msgstr "Отправить"
+
+#: shop/items/routes.py:38
+#, python-format
+msgid "Successfully created new item: %(item)s"
+msgstr "Добавлен новый товар: %(item)s"
+
+#: shop/items/routes.py:54
+#, python-format
+msgid "Successfully updated item: %(item)s"
+msgstr "Успешно обновлен товар: %(item)s"
+
+#: shop/items/routes.py:68
+#, python-format
+msgid "Item %(item)s was deleted"
+msgstr "Товар %(item)s удален"
+
+#: shop/items/routes.py:78
+#, python-format
+msgid "%(item)s already in cart"
+msgstr "%(item)s уже в корзине"
+
+#: shop/items/routes.py:90 shop/items/routes.py:99
+msgid "Your cart is empty"
+msgstr "Ваша корзина пуста"
+
+#: shop/items/routes.py:111
+msgid "Cart was updated"
+msgstr "Корзина обновлена"
+
+#: shop/items/routes.py:131 shop/templates/items/item.html:12
+#: shop/templates/items/item.html:42 shop/templates/partial/items_list.html:8
+#: shop/templates/partial/items_list.html:37
+msgid "Favorite"
+msgstr "В избранное"
+
+#: shop/items/routes.py:135 shop/templates/items/item.html:37
+#: shop/templates/partial/items_list.html:32
+msgid "Unfavorite"
+msgstr "Удалить из избранного"
+
+#: shop/templates/base.html:20 shop/templates/items/index.html:3
+msgid "Home"
+msgstr "Главная"
+
+#: shop/templates/base.html:25 shop/templates/items/create.html:3
+msgid "Create Item"
+msgstr "Добавить товар"
+
+#: shop/templates/base.html:28 shop/templates/users/contact-forms.html:3
+msgid "Contact Forms"
+msgstr "Контактные формы"
+
+#: shop/templates/base.html:31 shop/templates/items/cart.html:3
+msgid "Cart"
+msgstr "Корзина"
+
+#: shop/templates/base.html:32
+msgid "Contact Us"
+msgstr "Обратная связь"
+
+#: shop/templates/base.html:36
+msgid "Favorites"
+msgstr "Избранное"
+
+#: shop/templates/base.html:38
+msgid "Logout"
+msgstr "Выйти"
+
+#: shop/templates/base.html:41 shop/templates/users/login.html:3
+msgid "Login"
+msgstr "Вход"
+
+#: shop/templates/base.html:46
+msgid "en"
+msgstr "англ"
+
+#: shop/templates/base.html:47
+msgid "ru"
+msgstr "рус"
+
+#: shop/templates/items/cart.html:10 shop/templates/items/item.html:9
+#: shop/templates/partial/items_list.html:5
+msgid "Item"
+msgstr "Товар"
+
+#: shop/templates/items/cart.html:11
+msgid "Quantity"
+msgstr "Количество"
+
+#: shop/templates/items/cart.html:13
+msgid "Subtotal"
+msgstr "Сумма"
+
+#: shop/templates/items/cart.html:14
+msgid "Update/Delete"
+msgstr "Обновить/Удалить"
+
+#: shop/templates/items/cart.html:28
+msgid "Update"
+msgstr "Обновить"
+
+#: shop/templates/items/cart.html:29
+msgid "Delete"
+msgstr "Удалить"
+
+#: shop/templates/items/cart.html:36
+msgid "Grand Total"
+msgstr "Итого"
+
+#: shop/templates/items/cart.html:40
+msgid "Clear Cart"
+msgstr "Очистить корзину"
+
+#: shop/templates/items/favorited_items.html:3
+msgid "Favorited Items"
+msgstr "Избранные товары"
+
+#: shop/templates/items/item.html:11 shop/templates/partial/items_list.html:7
+msgid "Options"
+msgstr "Свойства"
+
+#: shop/templates/items/item.html:29 shop/templates/partial/items_list.html:25
+msgid "Add to Cart"
+msgstr "Добавить в корзину"
+
+#: shop/templates/items/update.html:3
+msgid "Update Item"
+msgstr "Изменить товар"
+
+#: shop/templates/items/update.html:33
+msgid "Back to Item"
+msgstr "Назад"
+
+#: shop/templates/partial/items_list.html:46
+msgid "No items here..."
+msgstr "Здесь пока нет товаров..."
+
+#: shop/templates/users/contact.html:3
+msgid "Contact Form"
+msgstr "Контактная форма"
+
+#: shop/templates/users/login.html:13
+msgid "Please sign in"
+msgstr "Пожалуйста выполните вход"
+
+#: shop/users/forms.py:9 shop/users/forms.py:15
+msgid "Email"
+msgstr "Почта"
+
+#: shop/users/forms.py:10
+msgid "Password"
+msgstr "Пароль"
+
+#: shop/users/forms.py:11
+msgid "Sign in"
+msgstr "Войти"
+
+#: shop/users/forms.py:16
+msgid "Phone"
+msgstr "Телефон"
+
+#: shop/users/forms.py:18
+msgid "Description"
+msgstr "Описание"
+
+#: shop/users/routes.py:15
+msgid "You are already logged in"
+msgstr "Вы уже вошли"
+
+#: shop/users/routes.py:24
+msgid "Invalid email or password"
+msgstr "Неправильный пароль или почта"
+
+#: shop/users/routes.py:33
+msgid "You were logged out"
+msgstr "Вы вышли"
+
+#: shop/users/routes.py:46
+msgid "Thank you! We will contact you soon.."
+msgstr "Спасибо! Мы свяжемся с вами в ближайшее время.."
+
+#~ msgid "%(item[\"name\"])s quantity in cart was updated"
+#~ msgstr "Количество товара %(item[\"name\"])s в корзине обновлено"
+

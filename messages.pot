@@ -1,0 +1,212 @@
+# Translations template for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-03-20 20:33+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: shop/items/forms.py:8 shop/users/forms.py:17
+msgid "Name"
+msgstr ""
+
+#: shop/items/forms.py:9 shop/templates/items/cart.html:12
+#: shop/templates/items/item.html:10 shop/templates/partial/items_list.html:6
+msgid "Price"
+msgstr ""
+
+#: shop/items/forms.py:10 shop/users/forms.py:19
+msgid "Submit"
+msgstr ""
+
+#: shop/items/routes.py:38
+#, python-format
+msgid "Successfully created new item: %(item)s"
+msgstr ""
+
+#: shop/items/routes.py:54
+#, python-format
+msgid "Successfully updated item: %(item)s"
+msgstr ""
+
+#: shop/items/routes.py:68
+#, python-format
+msgid "Item %(item)s was deleted"
+msgstr ""
+
+#: shop/items/routes.py:78
+#, python-format
+msgid "%(item)s already in cart"
+msgstr ""
+
+#: shop/items/routes.py:90 shop/items/routes.py:99
+msgid "Your cart is empty"
+msgstr ""
+
+#: shop/items/routes.py:111
+msgid "Cart was updated"
+msgstr ""
+
+#: shop/items/routes.py:131 shop/templates/items/item.html:12
+#: shop/templates/items/item.html:42 shop/templates/partial/items_list.html:8
+#: shop/templates/partial/items_list.html:37
+msgid "Favorite"
+msgstr ""
+
+#: shop/items/routes.py:135 shop/templates/items/item.html:37
+#: shop/templates/partial/items_list.html:32
+msgid "Unfavorite"
+msgstr ""
+
+#: shop/templates/base.html:20 shop/templates/items/index.html:3
+msgid "Home"
+msgstr ""
+
+#: shop/templates/base.html:25 shop/templates/items/create.html:3
+msgid "Create Item"
+msgstr ""
+
+#: shop/templates/base.html:28 shop/templates/users/contact-forms.html:3
+msgid "Contact Forms"
+msgstr ""
+
+#: shop/templates/base.html:31 shop/templates/items/cart.html:3
+msgid "Cart"
+msgstr ""
+
+#: shop/templates/base.html:32
+msgid "Contact Us"
+msgstr ""
+
+#: shop/templates/base.html:36
+msgid "Favorites"
+msgstr ""
+
+#: shop/templates/base.html:38
+msgid "Logout"
+msgstr ""
+
+#: shop/templates/base.html:41 shop/templates/users/login.html:3
+msgid "Login"
+msgstr ""
+
+#: shop/templates/base.html:46
+msgid "en"
+msgstr ""
+
+#: shop/templates/base.html:47
+msgid "ru"
+msgstr ""
+
+#: shop/templates/items/cart.html:10 shop/templates/items/item.html:9
+#: shop/templates/partial/items_list.html:5
+msgid "Item"
+msgstr ""
+
+#: shop/templates/items/cart.html:11
+msgid "Quantity"
+msgstr ""
+
+#: shop/templates/items/cart.html:13
+msgid "Subtotal"
+msgstr ""
+
+#: shop/templates/items/cart.html:14
+msgid "Update/Delete"
+msgstr ""
+
+#: shop/templates/items/cart.html:28
+msgid "Update"
+msgstr ""
+
+#: shop/templates/items/cart.html:29
+msgid "Delete"
+msgstr ""
+
+#: shop/templates/items/cart.html:36
+msgid "Grand Total"
+msgstr ""
+
+#: shop/templates/items/cart.html:40
+msgid "Clear Cart"
+msgstr ""
+
+#: shop/templates/items/favorited_items.html:3
+msgid "Favorited Items"
+msgstr ""
+
+#: shop/templates/items/item.html:11 shop/templates/partial/items_list.html:7
+msgid "Options"
+msgstr ""
+
+#: shop/templates/items/item.html:29 shop/templates/partial/items_list.html:25
+msgid "Add to Cart"
+msgstr ""
+
+#: shop/templates/items/update.html:3
+msgid "Update Item"
+msgstr ""
+
+#: shop/templates/items/update.html:33
+msgid "Back to Item"
+msgstr ""
+
+#: shop/templates/partial/items_list.html:46
+msgid "No items here..."
+msgstr ""
+
+#: shop/templates/users/contact.html:3
+msgid "Contact Form"
+msgstr ""
+
+#: shop/templates/users/login.html:13
+msgid "Please sign in"
+msgstr ""
+
+#: shop/users/forms.py:9 shop/users/forms.py:15
+msgid "Email"
+msgstr ""
+
+#: shop/users/forms.py:10
+msgid "Password"
+msgstr ""
+
+#: shop/users/forms.py:11
+msgid "Sign in"
+msgstr ""
+
+#: shop/users/forms.py:16
+msgid "Phone"
+msgstr ""
+
+#: shop/users/forms.py:18
+msgid "Description"
+msgstr ""
+
+#: shop/users/routes.py:15
+msgid "You are already logged in"
+msgstr ""
+
+#: shop/users/routes.py:24
+msgid "Invalid email or password"
+msgstr ""
+
+#: shop/users/routes.py:33
+msgid "You were logged out"
+msgstr ""
+
+#: shop/users/routes.py:46
+msgid "Thank you! We will contact you soon.."
+msgstr ""
+

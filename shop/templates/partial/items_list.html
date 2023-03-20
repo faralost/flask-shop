@@ -2,10 +2,10 @@
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">Item</th>
-            <th scope="col">Price</th>
-            <th scope="col">Options</th>
-            <th scope="col">Favorite</th>
+            <th scope="col">{{ _('Item') }}</th>
+            <th scope="col">{{ _('Price') }}</th>
+            <th scope="col">{{ _('Options') }}</th>
+            <th scope="col">{{ _('Favorite') }}</th>
         </tr>
         </thead>
         <tbody>
@@ -22,19 +22,19 @@
                     {% endif %}
                     <form action="{{ url_for('items.add_to_cart', pk=item.id) }}" method="POST">
                         <input type="hidden" name="next" value="{{ request.path }}">
-                        <button type="submit" class="btn btn-sm btn-warning">Add to Cart</button>
+                        <button type="submit" class="btn btn-sm btn-warning">{{ _('Add to Cart')}}</button>
                     </form>
                 </td>
                 <td>{% if current_user.is_authenticated %}
                     {% if current_user.is_favorited(item) %}
                         <button class="item-favorite btn btn-info btn-sm"
                                 data-item-favorite-url="{{ url_for('items.favorite', pk=item.id) }}">
-                            Unfavorite
+                            {{ _('Unfavorite') }}
                         </button>
                     {% else %}
                         <button class="item-favorite btn btn-info btn-sm"
                                 data-item-favorite-url="{{ url_for('items.favorite', pk=item.id) }}">
-                            Favorite
+                            {{ _('Favorite') }}
                         </button>
                     {% endif %}
                 {% endif %}</td>
@@ -43,5 +43,5 @@
         </tbody>
     </table>
 {% else %}
-    <h3>No items here...</h3>
+    <h3>{{ _('No items here...')}}</h3>
 {% endif %}

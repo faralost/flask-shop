@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %}Cart{% endblock %}
+{% block title %}{{ _('Cart') }}{% endblock %}
 
 {% block content %}
     <table class="table">
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Item</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Price</th>
-            <th scope="col">Subtotal</th>
-            <th scope="col">Update/Delete</th>
+            <th scope="col">{{ _('Item') }}</th>
+            <th scope="col">{{ _('Quantity') }}</th>
+            <th scope="col">{{ _('Price') }}</th>
+            <th scope="col">{{ _('Subtotal') }}</th>
+            <th scope="col">{{ _('Update/Delete') }}</th>
         </tr>
         </thead>
         <tbody>
@@ -25,17 +25,17 @@
                     {% set subtotal = item.quantity|int * item.price|float %}
                     <td>{{ subtotal }} $</td>
                     <td>
-                        <button type="submit" class="btn btn-sm btn-success">Update</button>
-                        <a href="{{ url_for('items.delete_cart_item', pk=item_id) }}" class="btn btn-sm btn-danger">Delete</a>
+                        <button type="submit" class="btn btn-sm btn-success">{{ _('Update') }}</button>
+                        <a href="{{ url_for('items.delete_cart_item', pk=item_id) }}" class="btn btn-sm btn-danger">{{ _('Delete') }}</a>
                     </td>
 
                 </form>
             </tr>
         {% endfor %}
         <tr class="table-info">
-            <th scope="row">Grand Total: {{ total }} $</th>
+            <th scope="row">{{ _('Grand Total')}}: {{ total }} $</th>
         </tr>
         </tbody>
     </table>
-    <a href="{{ url_for('items.clear_cart') }}" class="btn btn-sm btn-danger">Clear Cart</a>
+    <a href="{{ url_for('items.clear_cart') }}" class="btn btn-sm btn-danger">{{ _('Clear Cart')}}</a>
 {% endblock %}

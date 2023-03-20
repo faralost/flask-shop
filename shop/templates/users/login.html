@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Login{% endblock %}
+{% block title %}{{ _('Login') }}{% endblock %}
 
 {% block content %}
     <div class="row">
@@ -10,7 +10,7 @@
                 <form role="form" method="post" action="">
                     {{ form.csrf_token }}
                     <br>
-                    <h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
+                    <h1 class="h3 mb-3 fw-normal text-center">{{ _('Please sign in')}}</h1>
 
                     <div class="form-floating">
                         {{ form.email(placeholder="email", class="form-control mb-2") }}

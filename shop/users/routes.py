@@ -1,4 +1,5 @@
-from flask import Blueprint, flash, redirect, url_for, render_template
+from flask import Blueprint, flash, redirect, url_for, render_template, session
+from flask_babel import lazy_gettext as _
 from flask_login import current_user, login_user, login_required, logout_user
 
 from shop import db
@@ -11,7 +12,7 @@ users_bp = Blueprint('users', __name__)
 @users_bp.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        flash('You are already logged in', 'info')
+        flash(_('You are already logged in'), 'info')
         return redirect(url_for('items.index'))
     form = LoginForm()
     if form.validate_on_submit():
@@ -20,7 +21,7 @@ def login():
             login_user(user)
             return redirect(url_for('items.index'))
         else:
-            flash('Invalid email or password', 'danger')
+            flash(_('Invalid email or password'), 'danger')
             return render_template('users/login.html', form=form)
     return render_template('users/login.html', form=form)
 
@@ -29,7 +30,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    flash('You were logged out', 'success')
+    flash(_('You were logged out'), 'success')
     return redirect(url_for('users.login'))
 
 
@@ -42,7 +43,7 @@ def contact():
         )
         db.session.add(contact)
         db.session.commit()
-        flash(f'Thank you! We will contact you soon..', 'success')
+        flash(_(f'Thank you! We will contact you soon..'), 'success')
         return redirect(url_for('items.index'))
     if not current_user.is_anonymous:
         form.email.data = current_user.email
@@ -56,3 +57,9 @@ def contact():
 def contact_forms():
     contacts = Contact.query.order_by(Contact.id.desc()).all()
     return render_template('users/contact-forms.html', contacts=contacts)
+
+
+@users_bp.route('/language/<lang>')
+def set_language(lang):
+    session['language'] = lang
+    return redirect(url_for('items.index'))

@@ -1,3 +1,4 @@
+from flask_babel import lazy_gettext as _
 from flask_wtf import FlaskForm
 from wtforms import EmailField, PasswordField, SubmitField, StringField
 from wtforms.validators import DataRequired, Email
@@ -5,14 +6,14 @@ from wtforms.widgets import TextArea
 
 
 class LoginForm(FlaskForm):
-    email = EmailField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField('Sign in')
+    email = EmailField(_('Email'), validators=[DataRequired(), Email()])
+    password = PasswordField(_('Password'), validators=[DataRequired()])
+    submit = SubmitField(_('Sign in'))
 
 
 class ContactForm(FlaskForm):
-    email = EmailField('Email', validators=[DataRequired(), Email()])
-    phone = StringField('Phone', validators=[DataRequired()])
-    name = StringField('Name', validators=[DataRequired()])
-    description = StringField('Description', validators=[DataRequired()], widget=TextArea())
-    submit = SubmitField('Submit')
+    email = EmailField(_('Email'), validators=[DataRequired(), Email()])
+    phone = StringField(_('Phone'), validators=[DataRequired()])
+    name = StringField(_('Name'), validators=[DataRequired()])
+    description = StringField(_('Description'), validators=[DataRequired()], widget=TextArea())
+    submit = SubmitField(_('Submit'))
