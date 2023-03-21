@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-20 20:33+0600\n"
+"POT-Creation-Date: 2023-03-21 14:49+0600\n"
 "PO-Revision-Date: 2023-03-20 17:32+0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -60,54 +60,58 @@ msgstr "Ваша корзина пуста"
 msgid "Cart was updated"
 msgstr "Корзина обновлена"
 
-#: shop/items/routes.py:131 shop/templates/items/item.html:12
-#: shop/templates/items/item.html:42 shop/templates/partial/items_list.html:8
-#: shop/templates/partial/items_list.html:37
+#: shop/items/routes.py:131 shop/templates/items/item.html:13
+#: shop/templates/items/item.html:45 shop/templates/partial/items_list.html:9
+#: shop/templates/partial/items_list.html:40
 msgid "Favorite"
 msgstr "В избранное"
 
-#: shop/items/routes.py:135 shop/templates/items/item.html:37
-#: shop/templates/partial/items_list.html:32
+#: shop/items/routes.py:135 shop/templates/items/item.html:40
+#: shop/templates/partial/items_list.html:35
 msgid "Unfavorite"
 msgstr "Удалить из избранного"
 
-#: shop/templates/base.html:20 shop/templates/items/index.html:3
+#: shop/templates/base.html:26 shop/templates/items/index.html:3
 msgid "Home"
 msgstr "Главная"
 
-#: shop/templates/base.html:25 shop/templates/items/create.html:3
+#: shop/templates/base.html:31 shop/templates/items/create.html:3
 msgid "Create Item"
 msgstr "Добавить товар"
 
-#: shop/templates/base.html:28 shop/templates/users/contact-forms.html:3
+#: shop/templates/base.html:34 shop/templates/users/contact-forms.html:3
 msgid "Contact Forms"
 msgstr "Контактные формы"
 
-#: shop/templates/base.html:31 shop/templates/items/cart.html:3
+#: shop/templates/base.html:36 shop/templates/users/gtag_config.html:3
+msgid "Gtag Config"
+msgstr "Настройка Gtag"
+
+#: shop/templates/base.html:39 shop/templates/items/cart.html:3
 msgid "Cart"
 msgstr "Корзина"
 
-#: shop/templates/base.html:32
+#: shop/templates/base.html:40
 msgid "Contact Us"
 msgstr "Обратная связь"
 
-#: shop/templates/base.html:36
+#: shop/templates/base.html:44
 msgid "Favorites"
 msgstr "Избранное"
 
-#: shop/templates/base.html:38
+#: shop/templates/base.html:46
 msgid "Logout"
 msgstr "Выйти"
 
-#: shop/templates/base.html:41 shop/templates/users/login.html:3
+#: shop/templates/base.html:49 shop/templates/users/login.html:3
 msgid "Login"
 msgstr "Вход"
 
-#: shop/templates/base.html:46
+#: shop/templates/base.html:57
 msgid "en"
 msgstr "англ"
 
-#: shop/templates/base.html:47
+#: shop/templates/base.html:58
 msgid "ru"
 msgstr "рус"
 
@@ -152,7 +156,7 @@ msgstr "Избранные товары"
 msgid "Options"
 msgstr "Свойства"
 
-#: shop/templates/items/item.html:29 shop/templates/partial/items_list.html:25
+#: shop/templates/items/item.html:31 shop/templates/partial/items_list.html:27
 msgid "Add to Cart"
 msgstr "Добавить в корзину"
 
@@ -164,13 +168,30 @@ msgstr "Изменить товар"
 msgid "Back to Item"
 msgstr "Назад"
 
-#: shop/templates/partial/items_list.html:46
+#: shop/templates/partial/items_list.html:51
 msgid "No items here..."
 msgstr "Здесь пока нет товаров..."
 
 #: shop/templates/users/contact.html:3
 msgid "Contact Form"
 msgstr "Контактная форма"
+
+#: shop/templates/users/gtag_config.html:8
+msgid "Google Analytics is currently ENABLED"
+msgstr "Гугл Аналитика в данный момент ВКЛЮЧЕНА"
+
+#: shop/templates/users/gtag_config.html:10
+msgid "Google Analytics is currently DISABLED"
+msgstr "Гугл Аналитика в данный момент ОТКЛЮЧЕНА"
+
+#: shop/templates/users/gtag_config.html:15
+msgid "Disable"
+msgstr "Отключить"
+
+#: shop/templates/users/gtag_config.html:17
+#, fuzzy
+msgid "Enable"
+msgstr "Включить"
 
 #: shop/templates/users/login.html:13
 msgid "Please sign in"

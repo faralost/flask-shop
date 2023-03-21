@@ -72,5 +72,6 @@ def gtag_config():
     if request.method == 'POST':
         if app.config['GTAG']:
             app.config['GTAG'] = False
-        app.config['GTAG'] = True
+        else:
+            app.config['GTAG'] = True
     return render_template('users/gtag_config.html')
