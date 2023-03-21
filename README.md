@@ -12,11 +12,11 @@
 # Установка и запуск
 1. Склонируйте репозиторий
 
-2. Перейдя в директорию с проектом создайте файл .env и заполните по примеру:
+2. Перейдя в директорию с проектом создайте файл .env и заполните так:
 
 ```
 FLASK_APP=run.py
-FLASK_DEBUG=true
+FLASK_DEBUG=true (только во время девелопмента)
 FLASK_RUN_PORT=8000
 SQLALCHEMY_DATABASE_URI=postgresql://postgres:postgres@db:5432/postgres
 SECRET_KEY=secret_here
