@@ -24,6 +24,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI'
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['LANGUAGES'] = ['en', 'ru']
 app.config["BABEL_TRANSLATION_DIRECTORIES"] = os.path.join(BASE_DIR, '../translations')
+app.config["GTAG"] = False
 
 babel = Babel(app, locale_selector=get_locale)
 bcrypt = Bcrypt(app)

@@ -1,8 +1,8 @@
-from flask import Blueprint, flash, redirect, url_for, render_template, session
+from flask import Blueprint, flash, redirect, url_for, render_template, session, request
 from flask_babel import lazy_gettext as _
 from flask_login import current_user, login_user, login_required, logout_user
 
-from shop import db
+from shop import db, app
 from shop.users.forms import LoginForm, ContactForm
 from shop.users.models import User, Contact, admin_role_required
 
@@ -63,3 +63,14 @@ def contact_forms():
 def set_language(lang):
     session['language'] = lang
     return redirect(url_for('items.index'))
+
+
+@users_bp.route('/gtag_config', methods=['GET', 'POST'])
+@login_required
+@admin_role_required
+def gtag_config():
+    if request.method == 'POST':
+        if app.config['GTAG']:
+            app.config['GTAG'] = False
+        app.config['GTAG'] = True
+    return render_template('users/gtag_config.html')

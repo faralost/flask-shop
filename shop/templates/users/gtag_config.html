@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _('Gtag Config') }}{% endblock %}
+
+{% block content %}
+    <br>
+    {% if config.GTAG %}
+        <h3>{{ _('Google Analytics is currently ENABLED') }}</h3>
+    {% else %}
+        <h3>{{ _('Google Analytics is currently DISABLED') }}</h3>
+    {% endif %}
+
+    <form action="{{ url_for('users.gtag_config') }}" method="POST">
+        {% if config.GTAG %}
+            <button type="submit" class="btn btn-sm btn-danger">{{ _('Disable') }}</button>
+        {% else %}
+            <button type="submit" class="btn btn-sm btn-success">{{ _('Enable') }}</button>
+        {% endif %}
+    </form>
+{% endblock %}

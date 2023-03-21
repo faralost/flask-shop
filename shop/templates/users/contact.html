@@ -51,3 +51,14 @@
     </div>
 {% endblock %}
 
+{% block scripts %}
+<script src="https://unpkg.com/imask"></script>
+<script>
+    var element = document.getElementById('phone');
+    var maskOptions = {
+        mask: '+{7}(000)000-00-00',
+    };
+    var mask = IMask(element, maskOptions);
+</script>
+{% endblock %}
+
